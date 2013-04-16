@@ -14,7 +14,7 @@ if JAVA_OPTS["spark.local.dir"]
     $stderr.puts `mkdir -p #{path}`
     $stderr.puts `dd if=/dev/urandom bs=#{1024*1024} count=500 | split -b #{1024*1024*100} - #{path}/random`
     $stderr.puts "Syncing to slaves, this may take a while."
-    $stderr.puts `/root/mesos-ec2/copy-dir #{path}`
+    $stderr.puts `#{File.dirname(__FILE__)}/mesos-ec2/copy-dir #{path}`
   end
 else
   puts "spark.local.dir not set. Cannot perform disk warmup."
