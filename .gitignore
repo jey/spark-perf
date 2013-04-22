@@ -30,5 +30,4 @@ project/plugins/lib_managed/
 project/plugins/src_managed/
 logs/
 log/
-config/config.rb
 spark/
